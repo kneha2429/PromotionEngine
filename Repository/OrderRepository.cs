@@ -11,7 +11,22 @@ namespace PromotionEngine.Repository
     {
         public List<Order> GetOrderDetails(List<Product> products)
         {
-            throw new NotImplementedException();
+            int productCount = 0;
+            List<Order> orderList = null;
+            Console.WriteLine("Order Placement : Please select the product and provide quantity");
+            foreach (Product product in products)
+            {
+                Console.WriteLine("Product : {0}", product.ProductName);
+                productCount = int.Parse(Console.ReadLine());
+                Order order = new Order()
+                {
+                    ProductId = product.ProductId,
+                    Quantity = productCount,
+                    Price = product.Price
+                };
+                orderList.Add(order);
+            }
+            return orderList;
         }
     }
 }

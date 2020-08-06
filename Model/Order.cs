@@ -15,6 +15,8 @@ namespace PromotionEngine.Model
 
         public char PromotionType { get; set; }
 
+        public int Quantity { get; set; }
+
 
     }
 }

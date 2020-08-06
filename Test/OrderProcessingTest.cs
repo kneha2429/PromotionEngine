@@ -65,6 +65,20 @@ namespace PromotionEngine.Test
 
         }
 
+
+        [Fact]
+        public void CheckProductCount()
+        {
+
+            _productRepository.Setup(x => x.GetProductList().Count()).Returns(4);
+
+            var result = orderProcessing.GetProduct().Count();
+
+            Assert.Equal(4,result);
+        }
+
+
+
     }
 
     

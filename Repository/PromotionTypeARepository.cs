@@ -11,7 +11,25 @@ namespace PromotionEngine.Repository
     {
         public decimal GetPromotionPrice(List<Order> orders)
         {
-            throw new NotImplementedException();
+            decimal totalOrderPrice = 0;
+
+            foreach (Order order in orders)
+            {
+                if (order.ProductId == 'A')
+                {
+                    totalOrderPrice = ((order.Quantity / 3) * 130) + (order.Quantity % 3 * order.Price);
+                }
+                else if (order.ProductId == 'B')
+                {
+                    totalOrderPrice = ((order.Quantity / 2) * 45) + (order.Quantity % 2 * order.Price);
+                }
+                else
+                {
+                    totalOrderPrice = order.Quantity * order.Price;
+                }
+            
+            }
+            return totalOrderPrice;
         }
     }
 }

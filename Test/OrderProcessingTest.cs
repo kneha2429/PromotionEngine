@@ -29,7 +29,7 @@ namespace PromotionEngine.Test
 
 
         [Fact]
-        public void CheckProductListException()
+        public void CheckProductListNotImplementedException()
         {
 
             Action act = () => orderProcessing.GetProduct();
@@ -41,7 +41,7 @@ namespace PromotionEngine.Test
         }
 
         [Fact]
-        public void CheckOrderListException()
+        public void CheckOrderListNotImplementedException()
         {
             List<Product> product = new List<Product>();
             Action act = () => orderProcessing.GetOrders(product);
@@ -53,7 +53,7 @@ namespace PromotionEngine.Test
         }
 
         [Fact]
-        public void CheckPromotionException()
+        public void CheckPromotionNotImplementedException()
         {
             List<Order> orders = new List<Order>();
 

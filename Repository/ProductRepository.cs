@@ -11,7 +11,12 @@ namespace PromotionEngine.Repository
     {
         public List<Product> GetProductList()
         {
-            throw new NotImplementedException();
-        }
+            return new List<Product>{
+              new Product() {ProductId ='A',Price= 50,ProductName= "ProductA" },
+              new Product() {ProductId ='B',Price= 30,ProductName= "ProductB" },
+              new Product() {ProductId ='C',Price= 20,ProductName= "ProductC" },
+              new Product() {ProductId ='D',Price= 15,ProductName= "ProductD" }
+           };
+      }
     }
 }

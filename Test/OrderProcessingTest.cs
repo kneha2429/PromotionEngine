@@ -1,4 +1,5 @@
 ﻿using Moq;
+using PromotionEngine.Model;
 using PromotionEngine.Repository;
 using System;
 using System.CodeDom;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace PromotionEngine.Test
 {
@@ -26,11 +28,42 @@ namespace PromotionEngine.Test
         }
 
 
-        //public void CheckProductListException()
-        //{ 
-        //    Action act = () => orderProcessing.
+        [Fact]
+        public void CheckProductListException()
+        {
 
-        //}
+            Action act = () => orderProcessing.GetProduct();
+
+            var exception = Assert.Throws<NotImplementedException>(act);
+
+            Assert.Equal("Method Not Implemented",exception.Message);
+
+        }
+
+        [Fact]
+        public void CheckOrderListException()
+        {
+            List<Product> product = new List<Product>();
+            Action act = () => orderProcessing.GetOrders(product);
+
+            var exception = Assert.Throws<NotImplementedException>(act);
+
+            Assert.Equal("Method Not Implemented", exception.Message);
+
+        }
+
+        [Fact]
+        public void CheckPromotionException()
+        {
+            List<Order> orders = new List<Order>();
+
+            Action act = () => orderProcessing.GetTotalPrice(orders);
+
+            var exception = Assert.Throws<NotImplementedException>(act);
+
+            Assert.Equal("Method Not Implemented", exception.Message);
+
+        }
 
     }
 

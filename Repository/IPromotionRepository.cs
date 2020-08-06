@@ -9,6 +9,6 @@ namespace PromotionEngine.Repository
 {
     public interface IPromotionRepository
     {
-        decimal GetPromotionPrice(List<Product> products);
+        decimal GetPromotionPrice(List<Order> products);
     }
 }

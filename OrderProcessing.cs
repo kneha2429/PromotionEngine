@@ -24,9 +24,26 @@ namespace PromotionEngine
 
         public decimal StartProcessing()
         {
-            List<Product> products = this.productRepository.GetProductList();
-            List<Order> orders = this.orderRepository.GetOrderDetails(products);
+            List<Product> products = GetProduct();
+            List<Order> orders = GetOrders(products);
             return this.promotionRepository.GetPromotionPrice(orders);
         }
+
+        public List<Product> GetProduct()
+        {
+            return this.productRepository.GetProductList();
+        }
+
+        public List<Order> GetOrders(List<Product> products)
+        {
+          return this.orderRepository.GetOrderDetails(products);
+        }
+
+        public decimal GetTotalPrice(List<Order> orderList)
+        {
+            return this.promotionRepository.GetPromotionPrice(orderList);
+        }
+
+
     }
 }

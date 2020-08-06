@@ -21,6 +21,7 @@ namespace PromotionEngine
             IOrderRepository orderRepository = new OrderRepository();
             OrderProcessing orderProcessing = new OrderProcessing(promotionRepository,productRepository,orderRepository);
             decimal totalOrderPrice = orderProcessing.StartProcessing();
+            Console.WriteLine("Total Amount for the Order={0}", totalOrderPrice);
         }
 
         
